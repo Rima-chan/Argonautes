@@ -1,0 +1,24 @@
+{
+  "name": "argonautes-backend",
+  "version": "1.0.0",
+  "description": "API Rest",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rima-chan/Argonautes.git"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "api"
+  ],
+  "author": "Marie Beaujeu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rima-chan/Argonautes/issues"
+  },
+  "homepage": "https://github.com/Rima-chan/Argonautes#readme"
+}
