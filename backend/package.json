@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/Rima-chan/Argonautes/issues"
   },
-  "homepage": "https://github.com/Rima-chan/Argonautes#readme"
+  "homepage": "https://github.com/Rima-chan/Argonautes#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.7",
+    "mongoose-unique-validator": "^2.0.3"
+  }
 }
