@@ -28,8 +28,7 @@ function Main() {
             }
         }
         fetchData();
-    }, [])
-    console.log(data);
+    }, []);
     return (
         <main className="flex-grow rounded-3xl bg-gradient-to-r from-brownMiddle via-brownLight to-brownMiddle shadow-lg px-4 pt-6 pb-8 mx-4">
             <div className="">
@@ -52,14 +51,15 @@ function Main() {
                             ))}
                         </List>
                     )}
+                </div>
+                <div className="flex - flex-col">
                     <DisplayMessage
-                        classes={'text-red-600 font-bold mt-2'}
-                        message={ data?.error || error ? 'Oups il y a eu un problème' : ''} />
+                            classes={'text-red-600 font-bold mt-2'}
+                            message={ data?.error || error ? 'Oups, il y a eu un problème...' : ''} />
                     <DisplayMessage
                         classes={'font-bold'}
-                        message={ data.length === 0 ? 'Aucun membre pour le moment 💨' : ''} />
+                        message={ !data ? 'Aucun membre pour le moment 💨' : ''} />
                 </div>
-                
             </div>
         </main>
     )
