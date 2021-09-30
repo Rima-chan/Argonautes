@@ -5,9 +5,9 @@ import Loader from "./Loader";
 function Form() {
     const [inputValue, setInputValue] = useState('');
     const [ errorMessage, setErrorMessage] = useState('');
-    const errorClasses = 'italic text-xs text-red-600 mt-2';
-    const fetchErrorClasses ='text-red-600 font-bold mt-2';
-    const fetchSuccessClasses = 'font-bold text-green-600 mt-2';
+    // const errorClasses = 'italic text-xs text-red-600 mt-2';
+    // const fetchErrorClasses ='text-red-600 font-bold mt-2';
+    // const fetchSuccessClasses = 'font-bold text-green-600 mt-2';
 
     function handleInput(input) {
         setInputValue(input);
@@ -69,14 +69,14 @@ function Form() {
                     aria-label="Ajouter">AJOUTER</button>
             </span>
             <DisplayMessage
-                classes={errorClasses}
+                classes={'italic text-xs text-red-600 mt-2'}
                 message={ errorMessage } />
             { isLoading ? (<Loader />) : ''}
             <DisplayMessage
-                classes={fetchErrorClasses}
+                classes={ 'text-red-600 font-bold mt-2' }
                 message={ data?.error ? data.error :  (error ? 'Oups, nous avons eu un problème...' : '')} />
             <DisplayMessage
-                classes={ fetchSuccessClasses }
+                classes={ 'font-bold text-green-600 mt-2' }
                 message= { data?.message} />
         </form>
     )

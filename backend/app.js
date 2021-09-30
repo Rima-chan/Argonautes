@@ -15,5 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.post('/api/members', memberCtrl.Register);
+app.get('/api/members', memberCtrl.getAllMembers);
 
 module.exports = app;

@@ -1,7 +1,35 @@
 import Form from "./Form";
 import argonautesLogo from "../assets/argonautes_logo3.png";
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
+import DisplayMessage from "./DisplayMessage";
+import styled from "styled-components";
+
+const List = styled.ul`
+    column-count: 3;
+`
 
 function Main() {
+    const [ data, setData ] = useState([]);
+    const [ isLoading, setLoading ] = useState(false);
+    const [ error, setError ] = useState(false);
+    useEffect(() => {
+        setLoading(true);
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:8080/api/members');
+                const data = await response.json();
+                setData(data);
+            } catch(err) {
+                console.log(err)
+                setError(true)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchData();
+    }, [])
+    console.log(data);
     return (
         <main className="flex-grow rounded-3xl bg-gradient-to-r from-brownMiddle via-brownLight to-brownMiddle shadow-lg px-4 pt-6 pb-8 mx-4">
             <div className="">
@@ -16,7 +44,22 @@ function Main() {
                 </div>
                 <div>
                     <h2 className="text-lg font-lato font-semibold mb-4">Membres de l'équipage</h2>
+                    { isLoading ? <Loader/> : ''}
+                    {data && (
+                        <List>
+                            {data?.map((member, index) => (
+                                <li key={`${member.name}-${index}`}>{member.name}</li>
+                            ))}
+                        </List>
+                    )}
+                    <DisplayMessage
+                        classes={'text-red-600 font-bold mt-2'}
+                        message={ data?.error || error ? 'Oups il y a eu un problème' : ''} />
+                    <DisplayMessage
+                        classes={'font-bold'}
+                        message={ data.length === 0 ? 'Aucun membre pour le moment 💨' : ''} />
                 </div>
+                
             </div>
         </main>
     )

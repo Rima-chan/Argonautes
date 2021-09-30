@@ -24,7 +24,7 @@ exports.Register = (req, res) => {
 }
 
 exports.getAllMembers = (req , res) => {
-    Member.findAll()
-        .then(members => res.status(200).json({members}))
+    Member.find()
+        .then(members => res.status(200).json(members))
         .catch(err => res.status(404).json({error: 'Aucun membres d\'inscrit pour le moment' }));
 }
