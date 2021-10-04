@@ -10,7 +10,7 @@ const List = styled.ul`
 `
 
 function Main() {
-    const [ data, setData ] = useState([]);
+    const [ data, setData ] = useState('');
     const [ isLoading, setLoading ] = useState(false);
     const [ error, setError ] = useState(false);
     useEffect(() => {
@@ -20,9 +20,9 @@ function Main() {
                 const response = await fetch('http://localhost:8080/api/members');
                 const data = await response.json();
                 setData(data);
+                console.log(response);
             } catch(err) {
-                console.log(err)
-                setError(true)
+                setError(true);
             } finally {
                 setLoading(false)
             }
@@ -52,13 +52,12 @@ function Main() {
                         </List>
                     )}
                 </div>
-                <div className="flex - flex-col">
+                <div className="flex flex-col">
                     <DisplayMessage
                             classes={'text-red-600 font-bold mt-2'}
-                            message={ data?.error || error ? 'Oups, il y a eu un problème...' : ''} />
+                            message={ data?.error || error ? 'Oups, nous avons eu un problème...' : ''} />
                     <DisplayMessage
-                        classes={'font-bold'}
-                        message={ !data ? 'Aucun membre pour le moment 💨' : ''} />
+                        message={ data && data.length === 0  ? 'Aucun membre pour le moment 💨' : ''} />
                 </div>
             </div>
         </main>

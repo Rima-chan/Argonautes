@@ -3,9 +3,6 @@ const Member = require('../models/member');
 
 exports.Register = (req, res) => {
     const name = req.body.name;
-    console.log(req.body)
-    console.log('name')
-    console.log(name)
     if (!name || name.length > 13 || name.lenght < 2) {
         return res.status(400).json({error: 'Invalid parameters : name must lenght between 2 and 13'})
     } 
