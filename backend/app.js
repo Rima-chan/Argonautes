@@ -7,7 +7,7 @@ const memberCtrl = require('./controllers/member');
 
 const app = express();
 
-mongoose.connect(process.env.DB_MONGO_URL)
+mongoose.connect(process.env.DB_MONGO_URL, {useNewUrlParser: true})
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.log(error))
 

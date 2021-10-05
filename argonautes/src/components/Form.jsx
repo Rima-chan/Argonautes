@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import DisplayMessage from "./DisplayMessage";
 import Loader from "./Loader";
+import apiUrl from "../config";
 
 function Form() {
     const [ inputValue, setInputValue ] = useState('');
@@ -23,7 +24,7 @@ function Form() {
         }
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/api/members', requestOptions);
+            const response = await fetch(`${apiUrl}`, requestOptions);
             const data = await response.json();
             setData(data);
         } catch(err) {

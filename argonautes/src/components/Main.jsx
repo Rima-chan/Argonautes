@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import DisplayMessage from "./DisplayMessage";
 import styled from "styled-components";
+import apiUrl from "../config";
 
 const List = styled.ul`
     column-count: 3;
@@ -17,7 +18,7 @@ function Main() {
         setLoading(true);
         async function fetchData() {
             try {
-                const response = await fetch('http://localhost:8080/api/members');
+                const response = await fetch(`${apiUrl}`);
                 const data = await response.json();
                 setData(data);
                 console.log(response);

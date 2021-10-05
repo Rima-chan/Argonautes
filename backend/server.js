@@ -5,8 +5,9 @@ const app = require('./app');
 
 const server = http.createServer(app);
 
-const port = process.env.DB_PORT || 8080;
+const PORT = process.env.PORT || 8080;
+const HOST = '0.0.0.0';
 
-server.listen(port, () => {
-    console.log(`Listening on port : ${port}`)
+server.listen(PORT, HOST, function() {
+    console.log(`Listening on port : ${PORT}`)
 })

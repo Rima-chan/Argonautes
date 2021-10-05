@@ -4,6 +4,7 @@
   "description": "API Rest",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Rima-chan/Argonautes/issues"
+  },
+  "engines": {
+    "node": "14.17.5",
+    "npm": "6.14.14"
   },
   "homepage": "https://github.com/Rima-chan/Argonautes#readme",
   "dependencies": {
