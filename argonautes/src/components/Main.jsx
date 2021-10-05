@@ -21,7 +21,6 @@ function Main() {
                 const response = await fetch(`${apiUrl}`);
                 const data = await response.json();
                 setData(data);
-                console.log(response);
             } catch(err) {
                 setError(true);
             } finally {
@@ -32,7 +31,7 @@ function Main() {
     }, []);
     return (
         <main className="flex-grow rounded-3xl bg-gradient-to-r from-brownMiddle via-brownLight to-brownMiddle shadow-lg px-4 pt-6 pb-8 mx-4">
-            <div className="">
+            <div>
                 <div className="flex justify-center items-center mb-8">
                     <img src={ argonautesLogo } className="w-8 h-8" alt="Logo Argonaute" />
                     <h1 className="text-2xl text-center font-candal mx-4">LES ARGONAUTES</h1>
