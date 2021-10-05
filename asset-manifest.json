@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Argonautes/static/css/main.8b609c58.chunk.css",
-    "main.js": "/Argonautes/static/js/main.ede8994c.chunk.js",
-    "main.js.map": "/Argonautes/static/js/main.ede8994c.chunk.js.map",
+    "main.js": "/Argonautes/static/js/main.6260e844.chunk.js",
+    "main.js.map": "/Argonautes/static/js/main.6260e844.chunk.js.map",
     "runtime-main.js": "/Argonautes/static/js/runtime-main.6faa0634.js",
     "runtime-main.js.map": "/Argonautes/static/js/runtime-main.6faa0634.js.map",
     "static/js/2.5342e3e1.chunk.js": "/Argonautes/static/js/2.5342e3e1.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6faa0634.js",
     "static/js/2.5342e3e1.chunk.js",
     "static/css/main.8b609c58.chunk.css",
-    "static/js/main.ede8994c.chunk.js"
+    "static/js/main.6260e844.chunk.js"
   ]
 }
